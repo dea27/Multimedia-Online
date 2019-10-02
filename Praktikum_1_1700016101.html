@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas HTML</title>
+</head>
+
+<style type="text/css">
+	canvas{
+	background-color: rgb(50, 115, 220);
+}
+</style>
+
+<body>
+<canvas width="800" height="450" id="canvas"></canvas>
+
+<script type="text/javascript">
+	var c = document.getElementById('canvas');
+	var ctx =c.getContext('2d');
+
+//lingkaranbesar
+	ctx.beginPath();
+	ctx.arc(400, 225, 150, 0, Math.PI * 2);
+	ctx.fillStyle = "#e73827"
+
+	ctx.lineWidth=5;
+	ctx.strokeStyle="#FFA500";
+	ctx.fill();
+	ctx.stroke();
+
+//lingkarankecil
+	ctx.beginPath();
+	ctx.arc(400, 225, 100, 0, Math.PI * 2);
+	ctx.fillStyle = "#FFA500";
+	ctx.fill();
+
+//kotak
+	ctx.beginPath();
+	 ctx.rect(350, 175, 100, 100);
+	 ctx.fillStyle = "#e73827";
+	 ctx.lineWidth=10;
+	 ctx.strokeStyle="#e73827";
+	 
+	 ctx.strokeRect(350, 175, 100, 100);
+	 
+	 ctx.fill();
+
+//segitiga1
+	ctx.beginPath();
+	ctx.moveTo(160, 135);
+	ctx.lineTo(30, 230);
+	ctx.lineTo(160, 325);
+	ctx.fillStyle = "#e73827";
+	ctx.fill();
+
+//segitiga2
+	ctx.beginPath();
+	ctx.moveTo(650, 135);
+	ctx.lineTo(770, 220);
+	ctx.lineTo(650, 325);
+	ctx.fillStyle = "#e73827";
+	ctx.fill();
+
+	 
+</script>
+</body>
+</html>
