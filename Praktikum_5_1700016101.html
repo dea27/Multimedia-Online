@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Animation - Tween Motion</title>
+   <head>
+      <style type="text/css">
+         body{
+            margin:0;
+         }         
+         canvas{
+            background-color: rgb(205, 92, 92);
+         }
+      </style>
+   <body>      
+        
+<script>
+var blue, navy, maroon;
+var obj=[], objNum=100, color=['yellow','navy','maroon'];
+function startGame() {
+    for(var i=0; i<objNum; i++)
+    {
+      var pos=Math.floor(Math.random()*1350);
+      var speed=Math.floor(Math.random()*9)+1;
+      var clr=Math.floor(Math.random()*30);
+      obj[i]= new component(150, 50, color[clr], pos, 3,speed);
+    }
+   
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 1400;
+        this.canvas.height = 700;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, color, x, y,speed) {
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;    
+    this.speed=speed;
+    this.update = function(){
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+}
+
+function updateGameArea() {
+    myGameArea.clear();
+    for(var i=0; i<objNum;i++)
+    {
+      obj[i].y+=obj[i].speed;
+      if(obj[i].y>700){
+         var pos=Math.floor(Math.random()*1300);
+         var speed=Math.floor(Math.random()*10)+1;
+         obj[i].y=0;
+         obj[i].x=pos;
+         obj[i].speed=speed;
+      }
+      obj[i].update();
+    }    
+}
+
+startGame()
+
+</script>
+</body>
+</head>
+
+
