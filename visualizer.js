@@ -218,7 +218,7 @@ Visualizer.prototype = {
             return;
         };
         this.status = 0;
-        var text = 'HTML5 Audio Spectrum Visualizer - Alexandre Juca';
+        var text = 'Thank uuuuuu';
         document.getElementById('fileWrapper').style.opacity = 1;
         document.getElementById('info').innerHTML = text;
         instance.info = text;
