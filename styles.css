@@ -1,0 +1,33 @@
+
+
+body{
+	margin: 0;
+	padding: 0;
+	background: url(b.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-repeat: repeat-x;
+	
+}
+
+canvas{
+	 position: absolute;
+     background-color: #cccc;
+}
+.rumah{
+	position: relative;
+	background: url(coba.png);
+	height: 80vh;
+	background-size: cover;
+	background-repeat: repeat-x;
+	animation: animate 80s linear infinite;
+}
+
+@keyframes animate{
+	from{
+		background-position: 0 0;
+	}to{
+		background-position: 100% 0;
+	}
+
+}
