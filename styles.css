@@ -20,7 +20,7 @@ canvas{
 	height: 80vh;
 	background-size: cover;
 	background-repeat: repeat-x;
-	animation: animate 80s linear infinite;
+	animation: animate 60s linear infinite;
 }
 
 @keyframes animate{
